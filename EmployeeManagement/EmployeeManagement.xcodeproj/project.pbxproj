@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8861F22247530D200D76626 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F21247530D200D76626 /* MainTabBarViewController.swift */; };
+		D8861F242475322800D76626 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F232475322800D76626 /* ProjectListViewController.swift */; };
+		D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F252475651F00D76626 /* AddEmployeeViewController.swift */; };
+		D8861F2A2475671B00D76626 /* EmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */; };
+		D8861F2B2475671B00D76626 /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */; };
 		D8E60ED62475058D005AF5A6 /* EmployeeManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E60ED42475058D005AF5A6 /* EmployeeManagement.xcdatamodeld */; };
 		D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E60ED724750593005AF5A6 /* Assets.xcassets */; };
 		D8E60EDB24750593005AF5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E60ED924750593005AF5A6 /* LaunchScreen.storyboard */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8861F21247530D200D76626 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		D8861F232475322800D76626 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
+		D8861F252475651F00D76626 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeListTableViewCell.xib; sourceTree = "<group>"; };
+		D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		D8E60EC82475058D005AF5A6 /* EmployeeManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E60ED52475058D005AF5A6 /* EmployeeManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeManagement.xcdatamodel; sourceTree = "<group>"; };
 		D8E60ED724750593005AF5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8861F202475308100D76626 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D8861F21247530D200D76626 /* MainTabBarViewController.swift */,
+			);
+			name = MainTabBar;
+			path = EmployeeManagement/MainTabBar;
+			sourceTree = SOURCE_ROOT;
+		};
+		D8861F272475671B00D76626 /* TableviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */,
+				D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */,
+			);
+			path = TableviewCell;
+			sourceTree = "<group>";
+		};
 		D8E60EBF2475058D005AF5A6 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E60EE624751203005AF5A6 /* AppDelegate */,
+				D8861F202475308100D76626 /* MainTabBar */,
 				D8E60EED2475121C005AF5A6 /* AddEditEmployee */,
 				D8E60EE92475121C005AF5A6 /* EmployeeList */,
 				D8E60EF12475121C005AF5A6 /* ProjectList */,
@@ -131,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E60F0124751387005AF5A6 /* EmployeeListViewController.swift */,
+				D8861F272475671B00D76626 /* TableviewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +193,7 @@
 		D8E60EF02475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8861F252475651F00D76626 /* AddEmployeeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +227,7 @@
 		D8E60EF42475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8861F232475322800D76626 /* ProjectListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E60EDB24750593005AF5A6 /* LaunchScreen.storyboard in Resources */,
+				D8861F2A2475671B00D76626 /* EmployeeListTableViewCell.xib in Resources */,
 				D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */,
 				D8E60EE5247511DE005AF5A6 /* Main.storyboard in Resources */,
 			);
@@ -274,9 +307,13 @@
 				D8E60EE824751203005AF5A6 /* AppDelegate.swift in Sources */,
 				D8E60EFF247512DD005AF5A6 /* Validators.swift in Sources */,
 				D8E60F0224751387005AF5A6 /* EmployeeListViewController.swift in Sources */,
+				D8861F22247530D200D76626 /* MainTabBarViewController.swift in Sources */,
+				D8861F242475322800D76626 /* ProjectListViewController.swift in Sources */,
 				D8E60ED62475058D005AF5A6 /* EmployeeManagement.xcdatamodeld in Sources */,
+				D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */,
 				D8E60F00247512DD005AF5A6 /* UITextField+DoneButton.swift in Sources */,
 				D8E60EFE247512DD005AF5A6 /* Constants.swift in Sources */,
+				D8861F2B2475671B00D76626 /* EmployeeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

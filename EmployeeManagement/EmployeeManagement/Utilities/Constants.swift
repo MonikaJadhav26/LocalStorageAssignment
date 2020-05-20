@@ -15,11 +15,12 @@ struct Constants {
     
     static let kCellIdentifier = "EmployeeListCell"
     static let employeeListTitle = "Employee List"
+    static let storyboard = UIStoryboard(name: "Main", bundle: nil)
     static let createNewEmployeeTitle = "Create New Employee"
     static let ok = "OK"
     static let stodyboard = "Main"
     static let employeeListView = "EmployeeListViewController"
-    static let createEmployeeView = "CreateEmployeeViewController"
+    static let addEmployeeView = "AddEmployeeViewController"
     static let employeeListTableCell = "EmployeeListTableViewCell"
     static let errorTitle = "Error"
     static let success = "success"
