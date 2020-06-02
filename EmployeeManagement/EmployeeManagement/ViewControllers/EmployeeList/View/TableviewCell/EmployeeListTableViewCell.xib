@@ -107,10 +107,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundContainerView" destination="jo6-9P-Zxb" id="HDP-hY-LBP"/>
-                <outlet property="employeeAgeLabel" destination="uWe-uA-vmb" id="ADY-IB-nKg"/>
-                <outlet property="employeeNameLabel" destination="58C-eo-hL9" id="zfP-ZQ-040"/>
-                <outlet property="employeeProfileImage" destination="Dbv-C3-k4y" id="eHV-Uw-PJH"/>
-                <outlet property="employeeSalaryLabel" destination="wQh-pw-fL4" id="vuK-rK-FUA"/>
+                <outlet property="employeeCompetancyLabel" destination="wQh-pw-fL4" id="HmO-xK-Ojc"/>
+                <outlet property="employeeCurrentProjectLabel" destination="VWF-Tn-V0Y" id="7R9-TX-a1V"/>
+                <outlet property="employeeDesignationLabel" destination="uWe-uA-vmb" id="nhK-ze-boU"/>
+                <outlet property="employeeIdLabel" destination="wkW-j2-5qP" id="vVd-4Q-eDn"/>
+                <outlet property="employeeNameLabel" destination="58C-eo-hL9" id="U5l-pc-Wd7"/>
+                <outlet property="employeeProfileImage" destination="Dbv-C3-k4y" id="0yv-6P-OO2"/>
             </connections>
             <point key="canvasLocation" x="40.579710144927539" y="84.709821428571431"/>
         </tableViewCell>

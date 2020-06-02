@@ -8,17 +8,25 @@
 
 import UIKit
 
-class EmployeeListViewController: UIViewController {
+class EmployeeListViewController: BaseViewController {
 
   //MARK: - Outlets and Variables
   @IBOutlet weak var employeeListTableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
+    var employeeListViewModel = EmployeeListViewModel()
+
   
   //MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getEmployeeListFromURL()
+    }
+    
   //MARK: - Method for UI setup
   func setUpUI() {
     
@@ -34,34 +42,63 @@ class EmployeeListViewController: UIViewController {
   }
     
   @objc func rightBarButtonItemTapped(sender : UIBarButtonItem) {
-    let addViewController = UIStoryboard.init(name: Constants.stodyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.addEmployeeView) as? AddEmployeeViewController
-    self.navigationController?.pushViewController(addViewController!, animated: true)
+    navigateToEmployeeDetailsScreen(isEdit: false)
   }
+    
+    func navigateToEmployeeDetailsScreen(isEdit : Bool) {
+        let addViewController = UIStoryboard.init(name: Constants.stodyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.addEmployeeView) as? AddEditEmployeeViewController
+        addViewController?.isEdit = isEdit
+        self.navigationController?.pushViewController(addViewController!, animated: true)
+    }
 
+    //MARK: - Call to get all data server
+    func getEmployeeListFromURL() {
+      self.showActivityIndicator()
+      employeeListViewModel.fetchAllEmployeeList { result in
+        switch(result) {
+        case .success:
+          self.hideActivityIndicator()
+          self.employeeListTableView.reloadData()
+        case .failure(let error):
+          self.hideActivityIndicator()
+          self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+        }
+      }
+    }
 }
 
 //MARK: - UITableview delegate and datasource methods
 extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return employeeListViewModel.getNumberOfTotalEmployee(section: section)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
    
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kCellIdentifier, for: indexPath) as! EmployeeListTableViewCell
     cell.accessibilityIdentifier = "employeeCell_\(indexPath.row)"
-//    cell.employeeNameLabel.text = employeeListViewModel.getEmployeeFullName(indexPath: indexPath)
-//    cell.employeeAgeLabel.text = employeeListViewModel.getEmployeeAge(indexPath: indexPath)
-//    cell.employeeSalaryLabel.text = employeeListViewModel.getEmployeeSalary(indexPath: indexPath)
+    cell.employeeNameLabel.text = employeeListViewModel.getEmployeeFullName(indexPath: indexPath)
+    cell.employeeIdLabel.text = employeeListViewModel.getEmployeeID(indexPath: indexPath)
+    cell.employeeCompetancyLabel.text = employeeListViewModel.getEmployeeCompetancyName(indexPath: indexPath)
+    cell.employeeDesignationLabel.text = employeeListViewModel.getEmployeeDesignation(indexPath: indexPath)
+    cell.employeeCurrentProjectLabel.text = employeeListViewModel.getEmployeeCurrentProjectName(indexPath: indexPath)
     cell.employeeProfileImage.image = Constants.defaultImage
 
     return cell
   }
   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigateToEmployeeDetailsScreen(isEdit: true)
+    }
+    
+    
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
   
+    
+    
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if (editingStyle == .delete) {
 //      let employee = employeeListViewModel.employeeData[indexPath.row]

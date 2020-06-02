@@ -13,8 +13,10 @@ class EmployeeListTableViewCell: UITableViewCell {
     //MARK: - Outlets
     @IBOutlet weak var backgroundContainerView: UIView!
     @IBOutlet weak var employeeNameLabel: UILabel!
-    @IBOutlet weak var employeeAgeLabel: UILabel!
-    @IBOutlet weak var employeeSalaryLabel: UILabel!
+    @IBOutlet weak var employeeDesignationLabel: UILabel!
+    @IBOutlet weak var employeeCompetancyLabel: UILabel!
+    @IBOutlet weak var employeeCurrentProjectLabel: UILabel!
+    @IBOutlet weak var employeeIdLabel: UILabel!
     @IBOutlet weak var employeeProfileImage: UIImageView!
     
     

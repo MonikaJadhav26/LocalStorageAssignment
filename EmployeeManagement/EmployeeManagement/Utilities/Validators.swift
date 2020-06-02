@@ -14,20 +14,18 @@ protocol ValidatorConvertible {
 
 enum ValidatorType {
     case employeename
-    case salary
-    case projectIdentifier
     case requiredField(field: String)
-    case age
+    case band
+
 }
 
 enum VaildatorFactory {
     static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
         switch type {
         case .employeename: return EmployeeNameValidator()
-        case .salary:return SalaryValidator()
-        case .projectIdentifier: return ProjectIdentifierValidator()
         case .requiredField(let fieldName): return RequiredFieldValidator(fieldName)
-        case .age: return AgeValidator()
+        case .band: return BandValidator()
+
             
         }
     }
@@ -48,12 +46,11 @@ struct ProjectIdentifierValidator: ValidatorConvertible {
 }
 
 
-class AgeValidator: ValidatorConvertible {
+
+class BandValidator: ValidatorConvertible {
     func validated(_ value: String) throws -> String {
-        guard value.count > 0 else {throw ValidationError("Age is required")}
-        guard let age = Int(value) else {throw ValidationError("Age must be a number!")}
-        guard value.count < 3 else {throw ValidationError("Invalid age number!")}
-        guard age >= 21 else {throw ValidationError("You have to be over 21 years old :)")}
+        guard value.count > 0 else {throw ValidationError("band is required")}
+        guard value.count <= 2 else {throw ValidationError("Invalid band name!")}
         return value
     }
 }
@@ -93,14 +90,7 @@ struct EmployeeNameValidator: ValidatorConvertible {
     }
 }
 
-struct SalaryValidator: ValidatorConvertible {
-    func validated(_ value: String) throws -> String {
-        guard value.count > 0 else {throw ValidationError("Employee salary is required")}
-        guard let salary = Int(value) else {throw ValidationError("Employee salary must be a number!")}
-        guard value.count < 500 else {throw ValidationError("Invalid Employee salary!")}
-        guard salary >= 1000 else {throw ValidationError("Employee salary have to be over 1000 rupees)")}
-        return value
-    }
-}
+
+
 
 

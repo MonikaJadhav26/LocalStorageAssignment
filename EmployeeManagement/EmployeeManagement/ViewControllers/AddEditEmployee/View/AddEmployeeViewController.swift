@@ -12,13 +12,45 @@ class AddEmployeeViewController: UIViewController {
 
   
   //MARK: - Outlets and Variables
-  @IBOutlet weak var competancyTableView: UITableView!
+    @IBOutlet weak var competancyTableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var bandTextField: UITextField!
+    @IBOutlet weak var designationTextField: UITextField!
+    @IBOutlet weak var competencyTextField: UITextField!
+    @IBOutlet weak var projectTextField: UITextField!
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollContentViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollContentView: UIView!
+
   var slectedCellIndexPath = IndexPath()
   
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-    }
+      manageScrollView()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+         }
+    
+    override func viewDidLayoutSubviews() {
+           super.viewDidLayoutSubviews()
+           
+           let yMax = projectTextField.frame.origin.y + projectTextField.frame.size.height + 12
+           scrollContentViewHeightConstraint.constant = yMax
+       
+       }
+
+       private func manageScrollView(){
+           var lastView : UIView?
+           lastView = projectTextField
+           let yMax = lastView!.frame.origin.y + lastView!.frame.size.height + 12
+           scrollContentViewHeightConstraint.constant = yMax
+           backgroundScrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: yMax)
+           self.view.layoutIfNeeded()
+       }
 
   //MARK: - Method for UI setup
   func setUpUI() {
@@ -30,7 +62,18 @@ class AddEmployeeViewController: UIViewController {
   @objc func rightBarButtonItemTapped(sender : UIBarButtonItem) {
     
   }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+         print("keyboardWillShow")
+        let keyboardHeight: CGFloat = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+        self.bottomConstraint.constant  = keyboardHeight - 49
+    }
 
+    @objc func keyboardWillHide(notification: NSNotification){
+         print("keyboardWillHide")
+        self.bottomConstraint.constant = 120.0
+
+    }
 }
 
 //MARK: - UITableview delegate and datasource methods
@@ -65,4 +108,17 @@ extension AddEmployeeViewController : UITableViewDelegate , UITableViewDataSourc
     return 40
   }
   
+}
+
+extension AddEmployeeViewController:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        return true
+    }
+    
+  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

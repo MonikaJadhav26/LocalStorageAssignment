@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UVCustomView" customModule="EmployeeManagement" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="9OD-9z-EWN" id="g4S-hN-wLq"/>
+                <outlet property="titleLabel" destination="M9a-WJ-fsb" id="hJQ-dH-iz2"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Dbl-bO-ILw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-WJ-fsb" userLabel="Title Label">
+                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="smU-6i-e1G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9OD-9z-EWN" userLabel="Text Field">
+                    <rect key="frame" x="8" y="25" width="359" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="OH3-TF-rGb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Xmt-MM-q8k"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="M9a-WJ-fsb" secondAttribute="trailing" constant="8" id="AGx-Q1-Czn"/>
+                <constraint firstAttribute="trailing" secondItem="9OD-9z-EWN" secondAttribute="trailing" constant="8" id="GOP-uy-mqr"/>
+                <constraint firstItem="M9a-WJ-fsb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="RTL-S8-i5z"/>
+                <constraint firstItem="M9a-WJ-fsb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="WII-d9-dRu"/>
+                <constraint firstItem="9OD-9z-EWN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="eDu-rV-UuG"/>
+                <constraint firstItem="9OD-9z-EWN" firstAttribute="top" secondItem="M9a-WJ-fsb" secondAttribute="bottom" constant="-4" id="lH5-Dv-7EE"/>
+                <constraint firstAttribute="bottom" secondItem="9OD-9z-EWN" secondAttribute="bottom" constant="8" id="sUZ-Or-D2D"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-235"/>
+        </view>
+    </objects>
+</document>

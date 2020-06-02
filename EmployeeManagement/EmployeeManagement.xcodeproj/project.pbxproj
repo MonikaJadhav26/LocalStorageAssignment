@@ -12,7 +12,6 @@
 		D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F252475651F00D76626 /* AddEmployeeViewController.swift */; };
 		D8861F2A2475671B00D76626 /* EmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */; };
 		D8861F2B2475671B00D76626 /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */; };
-		D8E60ED62475058D005AF5A6 /* EmployeeManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E60ED42475058D005AF5A6 /* EmployeeManagement.xcdatamodeld */; };
 		D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E60ED724750593005AF5A6 /* Assets.xcassets */; };
 		D8E60EDB24750593005AF5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E60ED924750593005AF5A6 /* LaunchScreen.storyboard */; };
 		D8E60EE5247511DE005AF5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E60EE4247511DE005AF5A6 /* Main.storyboard */; };
@@ -21,6 +20,19 @@
 		D8E60EFF247512DD005AF5A6 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E60EFC247512DD005AF5A6 /* Validators.swift */; };
 		D8E60F00247512DD005AF5A6 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E60EFD247512DD005AF5A6 /* UITextField+DoneButton.swift */; };
 		D8E60F0224751387005AF5A6 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E60F0124751387005AF5A6 /* EmployeeListViewController.swift */; };
+		D8F2C792248500F900EC23F2 /* UVCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F2C790248500F900EC23F2 /* UVCustomView.xib */; };
+		D8F2C793248500F900EC23F2 /* UVCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C791248500F900EC23F2 /* UVCustomView.swift */; };
+		D8F2C7952485131900EC23F2 /* AddEditEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7942485131900EC23F2 /* AddEditEmployeeViewController.swift */; };
+		D8F2C799248535E200EC23F2 /* EmployeeManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C797248535E200EC23F2 /* EmployeeManagement.xcdatamodeld */; };
+		D8F2C79E2485361200EC23F2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C79A2485361200EC23F2 /* Project+CoreDataClass.swift */; };
+		D8F2C79F2485361200EC23F2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C79B2485361200EC23F2 /* Project+CoreDataProperties.swift */; };
+		D8F2C7A02485361200EC23F2 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C79C2485361200EC23F2 /* Employee+CoreDataClass.swift */; };
+		D8F2C7A12485361200EC23F2 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C79D2485361200EC23F2 /* Employee+CoreDataProperties.swift */; };
+		D8F2C7A324855B5600EC23F2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7A224855B5600EC23F2 /* CoreDataManager.swift */; };
+		D8F2C7A5248632E900EC23F2 /* SaveEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7A4248632E900EC23F2 /* SaveEmployeeViewModel.swift */; };
+		D8F2C7AA24863B7500EC23F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7A924863B7500EC23F2 /* BaseViewController.swift */; };
+		D8F2C7AD24864D1200EC23F2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AC24864D1200EC23F2 /* DataModel.swift */; };
+		D8F2C7AF24864D5100EC23F2 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +42,6 @@
 		D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeListTableViewCell.xib; sourceTree = "<group>"; };
 		D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		D8E60EC82475058D005AF5A6 /* EmployeeManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8E60ED52475058D005AF5A6 /* EmployeeManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeManagement.xcdatamodel; sourceTree = "<group>"; };
 		D8E60ED724750593005AF5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8E60EDA24750593005AF5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8E60EDC24750593005AF5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +51,19 @@
 		D8E60EFC247512DD005AF5A6 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		D8E60EFD247512DD005AF5A6 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
 		D8E60F0124751387005AF5A6 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		D8F2C790248500F900EC23F2 /* UVCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UVCustomView.xib; sourceTree = "<group>"; };
+		D8F2C791248500F900EC23F2 /* UVCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCustomView.swift; sourceTree = "<group>"; };
+		D8F2C7942485131900EC23F2 /* AddEditEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditEmployeeViewController.swift; sourceTree = "<group>"; };
+		D8F2C798248535E200EC23F2 /* EmployeeManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeManagement.xcdatamodel; sourceTree = "<group>"; };
+		D8F2C79A2485361200EC23F2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8F2C79B2485361200EC23F2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8F2C79C2485361200EC23F2 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8F2C79D2485361200EC23F2 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8F2C7A224855B5600EC23F2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D8F2C7A4248632E900EC23F2 /* SaveEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveEmployeeViewModel.swift; sourceTree = "<group>"; };
+		D8F2C7A924863B7500EC23F2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D8F2C7AC24864D1200EC23F2 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +116,9 @@
 			children = (
 				D8E60EE624751203005AF5A6 /* AppDelegate */,
 				D8861F202475308100D76626 /* MainTabBar */,
+				D8F2C796248535AA00EC23F2 /* Database */,
+				D8F2C7A824863B7500EC23F2 /* BaseView */,
+				D8F2C7AB24864D1200EC23F2 /* Model */,
 				D8E60EED2475121C005AF5A6 /* AddEditEmployee */,
 				D8E60EE92475121C005AF5A6 /* EmployeeList */,
 				D8E60EF12475121C005AF5A6 /* ProjectList */,
@@ -100,7 +127,6 @@
 				D8E60ED724750593005AF5A6 /* Assets.xcassets */,
 				D8E60ED924750593005AF5A6 /* LaunchScreen.storyboard */,
 				D8E60EDC24750593005AF5A6 /* Info.plist */,
-				D8E60ED42475058D005AF5A6 /* EmployeeManagement.xcdatamodeld */,
 			);
 			path = EmployeeManagement;
 			sourceTree = "<group>";
@@ -108,6 +134,7 @@
 		D8E60EE2247511DE005AF5A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D8F2C78F248500F900EC23F2 /* UVCustomView */,
 				D8E60EFB247512DD005AF5A6 /* Constants.swift */,
 				D8E60EFD247512DD005AF5A6 /* UITextField+DoneButton.swift */,
 				D8E60EFC247512DD005AF5A6 /* Validators.swift */,
@@ -145,6 +172,7 @@
 		D8E60EEA2475121C005AF5A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,6 +207,7 @@
 		D8E60EEE2475121C005AF5A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D8F2C7A4248632E900EC23F2 /* SaveEmployeeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D8861F252475651F00D76626 /* AddEmployeeViewController.swift */,
+				D8F2C7942485131900EC23F2 /* AddEditEmployeeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +261,45 @@
 			);
 			path = View;
 			sourceTree = "<group>";
+		};
+		D8F2C78F248500F900EC23F2 /* UVCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2C790248500F900EC23F2 /* UVCustomView.xib */,
+				D8F2C791248500F900EC23F2 /* UVCustomView.swift */,
+			);
+			path = UVCustomView;
+			sourceTree = "<group>";
+		};
+		D8F2C796248535AA00EC23F2 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2C79A2485361200EC23F2 /* Project+CoreDataClass.swift */,
+				D8F2C79B2485361200EC23F2 /* Project+CoreDataProperties.swift */,
+				D8F2C79C2485361200EC23F2 /* Employee+CoreDataClass.swift */,
+				D8F2C79D2485361200EC23F2 /* Employee+CoreDataProperties.swift */,
+				D8F2C797248535E200EC23F2 /* EmployeeManagement.xcdatamodeld */,
+				D8F2C7A224855B5600EC23F2 /* CoreDataManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		D8F2C7A824863B7500EC23F2 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2C7A924863B7500EC23F2 /* BaseViewController.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		D8F2C7AB24864D1200EC23F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2C7AC24864D1200EC23F2 /* DataModel.swift */,
+			);
+			name = Model;
+			path = EmployeeManagement/Model;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -292,6 +361,7 @@
 			files = (
 				D8E60EDB24750593005AF5A6 /* LaunchScreen.storyboard in Resources */,
 				D8861F2A2475671B00D76626 /* EmployeeListTableViewCell.xib in Resources */,
+				D8F2C792248500F900EC23F2 /* UVCustomView.xib in Resources */,
 				D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */,
 				D8E60EE5247511DE005AF5A6 /* Main.storyboard in Resources */,
 			);
@@ -308,11 +378,22 @@
 				D8E60EFF247512DD005AF5A6 /* Validators.swift in Sources */,
 				D8E60F0224751387005AF5A6 /* EmployeeListViewController.swift in Sources */,
 				D8861F22247530D200D76626 /* MainTabBarViewController.swift in Sources */,
+				D8F2C7A324855B5600EC23F2 /* CoreDataManager.swift in Sources */,
+				D8F2C7AA24863B7500EC23F2 /* BaseViewController.swift in Sources */,
+				D8F2C799248535E200EC23F2 /* EmployeeManagement.xcdatamodeld in Sources */,
+				D8F2C7A12485361200EC23F2 /* Employee+CoreDataProperties.swift in Sources */,
+				D8F2C7952485131900EC23F2 /* AddEditEmployeeViewController.swift in Sources */,
 				D8861F242475322800D76626 /* ProjectListViewController.swift in Sources */,
-				D8E60ED62475058D005AF5A6 /* EmployeeManagement.xcdatamodeld in Sources */,
+				D8F2C79E2485361200EC23F2 /* Project+CoreDataClass.swift in Sources */,
+				D8F2C793248500F900EC23F2 /* UVCustomView.swift in Sources */,
 				D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */,
+				D8F2C79F2485361200EC23F2 /* Project+CoreDataProperties.swift in Sources */,
+				D8F2C7AD24864D1200EC23F2 /* DataModel.swift in Sources */,
+				D8F2C7A5248632E900EC23F2 /* SaveEmployeeViewModel.swift in Sources */,
 				D8E60F00247512DD005AF5A6 /* UITextField+DoneButton.swift in Sources */,
 				D8E60EFE247512DD005AF5A6 /* Constants.swift in Sources */,
+				D8F2C7A02485361200EC23F2 /* Employee+CoreDataClass.swift in Sources */,
+				D8F2C7AF24864D5100EC23F2 /* EmployeeListViewModel.swift in Sources */,
 				D8861F2B2475671B00D76626 /* EmployeeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -435,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -505,12 +586,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D8E60ED42475058D005AF5A6 /* EmployeeManagement.xcdatamodeld */ = {
+		D8F2C797248535E200EC23F2 /* EmployeeManagement.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D8E60ED52475058D005AF5A6 /* EmployeeManagement.xcdatamodel */,
+				D8F2C798248535E200EC23F2 /* EmployeeManagement.xcdatamodel */,
 			);
-			currentVersion = D8E60ED52475058D005AF5A6 /* EmployeeManagement.xcdatamodel */;
+			currentVersion = D8F2C798248535E200EC23F2 /* EmployeeManagement.xcdatamodel */;
 			path = EmployeeManagement.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

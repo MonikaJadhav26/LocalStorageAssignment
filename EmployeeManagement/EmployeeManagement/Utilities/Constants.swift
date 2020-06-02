@@ -22,11 +22,11 @@ struct Constants {
     static let ok = "OK"
     static let stodyboard = "Main"
     static let employeeListView = "EmployeeListViewController"
-    static let addEmployeeView = "AddEmployeeViewController"
+    static let addEmployeeView = "AddEditEmployeeViewController"
     static let employeeListTableCell = "EmployeeListTableViewCell"
     static let errorTitle = "Error"
     static let success = "success"
-    static let cresteEmployeeSuccessMessage = "Employee created successfully!"
+    static let saveEmployeeSuccessMessage = "Employee record saved successfully!"
     static let message = "Message"
     static let alert = "Alert"
     static let defaultImage = UIImage(named: "default")
@@ -35,4 +35,5 @@ struct Constants {
     static let grayButtonColour = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
     static let greenButtonColour = UIColor(red: 38/255, green: 146/255, blue: 66/255, alpha: 1)
     static let accessibilityIdentifierForEmployeeListTable = "EmployeeListTable"
+    static let competancyArray = ["Mobility","UI&UX","Testing","Web","Server"]
 }
