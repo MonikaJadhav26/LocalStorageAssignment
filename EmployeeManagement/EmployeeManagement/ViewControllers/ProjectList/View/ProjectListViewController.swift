@@ -96,7 +96,12 @@ extension ProjectListViewController : UITableViewDelegate , UITableViewDataSourc
         (cell?.contentView.viewWithTag(1) as! UILabel).text = addProjectViewModel.getProjectName(indexPath : indexPath)
         return cell!
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if (editingStyle == .delete) {
+       addProjectViewModel.deletePerticularProjectRecordFromDatabase(projectName: addProjectViewModel.getProjectName(indexPath : indexPath))
+      }
+      getProjectList()
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50

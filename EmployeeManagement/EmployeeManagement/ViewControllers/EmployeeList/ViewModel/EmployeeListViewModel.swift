@@ -31,6 +31,10 @@ class EmployeeListViewModel : NSObject {
         }
     }
     
+    func deletePerticularEmployeeRecordFromDatabase(employeeID : String) {
+        CoreDataManager.sharedManager.deleteEmployee(employeeId : employeeID)
+    }
+    
     func getNumberOfTotalEmployee(section: Int) -> Int {
         return self.employeeList.count
     }

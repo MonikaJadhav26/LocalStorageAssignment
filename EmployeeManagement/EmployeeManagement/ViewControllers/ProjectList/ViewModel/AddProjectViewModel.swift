@@ -45,6 +45,9 @@ class AddProjectViewModel : NSObject {
             }
         }
     }
+    func deletePerticularProjectRecordFromDatabase(projectName : String) {
+        CoreDataManager.sharedManager.deleteProject(projectName : projectName)
+    }
     
     func getNumberOfTotalProjects(section: Int) -> Int {
         return self.projectList.count

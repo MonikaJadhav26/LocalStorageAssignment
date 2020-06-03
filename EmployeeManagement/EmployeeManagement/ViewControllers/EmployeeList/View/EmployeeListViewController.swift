@@ -104,24 +104,9 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
     
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if (editingStyle == .delete) {
-//      let employee = employeeListViewModel.employeeData[indexPath.row]
-//      deleteEmployeeViewModel.deleteEmployee(employeeID: Int(employee.id ?? "") ?? 0) { (result) in
-//        switch(result) {
-//        case .success(let result):
-//          if result.status == Constants.success {
-//            self.employeeListTableView.beginUpdates()
-//            self.employeeListViewModel.employeeData.remove(at: indexPath.row)
-//            self.employeeListTableView.deleteRows(at: [indexPath], with: .fade)
-//            self.employeeListTableView.endUpdates()
-//          } else {
-//            self.showAlert(message: result.message, title: Constants.alert , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
-//          }
-//
-//        case .failure(let error):
-//          self.showAlert(message: error.localizedDescription, title: Constants.errorTitle , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
-//        }
-//      }
+     employeeListViewModel.deletePerticularEmployeeRecordFromDatabase(employeeID: employeeListViewModel.getEmployeeID(indexPath : indexPath))
     }
+    getEmployeeListFromURL()
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
