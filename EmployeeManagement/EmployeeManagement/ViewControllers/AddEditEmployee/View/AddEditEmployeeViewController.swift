@@ -26,6 +26,7 @@ class AddEditEmployeeViewController: BaseViewController {
     var slectedCellIndexPath = IndexPath()
     let saveEmployeeViewModel = SaveEmployeeViewModel()
     var isEdit : Bool?
+    var idForEditEmployee : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,23 +74,72 @@ class AddEditEmployeeViewController: BaseViewController {
         competancyTextView.scrollContentHeightViewContraint?.constant = scrollContentViewHeightConstraint.constant
         competancyTextView.addNotificationForKeyboard()
         
-        projectTextView.pickerOption = ["Sawari - Vendor", "Sawari - Rider", "Sawari - Driver", "Bell Canada", "ATT FirstNet", "Verizon"]
+        getPickerOptionForProjectList()
 
+    }
+    
+    func getPickerOptionForProjectList() {
+          self.showActivityIndicator()
+          saveEmployeeViewModel.getProjectList { result in
+            switch(result) {
+            case .success:
+              self.hideActivityIndicator()
+              self.projectTextView.pickerOption = self.saveEmployeeViewModel.getPickerOptionArray()
+            case .failure(let error):
+              self.hideActivityIndicator()
+              self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+            }
+          }
     }
     
     //MARK: - Method for UI setup
     func setUpUI() {
       self.title = Constants.addNewEmployee
-        save.isEnabled = false
-        save.backgroundColor = .lightGray
-//        iDView.textField.isUserInteractionEnabled = false
-//        iDView.textField.textColor = .black
-      let rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(rightBarButtonItemTapped(sender:)))
-      self.navigationItem.rightBarButtonItem  = rightBarButtonItem
+        
+        if isEdit! {
+            let rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(rightBarButtonItemTapped(sender:)))
+                 self.navigationItem.rightBarButtonItem  = rightBarButtonItem
+            iDView.textField.isUserInteractionEnabled =  false
+//            nameTextView.textField.isUserInteractionEnabled = false
+//            designationTextView.textField.isUserInteractionEnabled = false
+//            competancyTextView.textField.isUserInteractionEnabled = false
+//            projectTextView.textField.isUserInteractionEnabled = false
+//            bandTextView.textField.isUserInteractionEnabled = false
+//            iDView.textField.textColor = .darkGray
+            save.isEnabled = true
+            save.backgroundColor = Constants.greenButtonColour
+            getEmployeeData()
+        }else {
+            save.isEnabled = false
+            save.backgroundColor = .lightGray
+        }
     }
     
     @objc func rightBarButtonItemTapped(sender : UIBarButtonItem) {
       
+    }
+     //MARK: - Call to get perticular employee data
+        func getEmployeeData() {
+          self.showActivityIndicator()
+            saveEmployeeViewModel.fetchPerticuarEmployee(employeeID : idForEditEmployee!) { result in
+            switch(result) {
+            case .success:
+              self.hideActivityIndicator()
+              self.setValuesForAllControls()
+            case .failure(let error):
+              self.hideActivityIndicator()
+              self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+            }
+          }
+        }
+
+    func setValuesForAllControls() {
+        iDView.textField.text = saveEmployeeViewModel.getEmployeeID()
+        nameTextView.textField.text = saveEmployeeViewModel.getEmployeeFullName()
+        bandTextView.textField.text = saveEmployeeViewModel.getEmployeeBand()
+        designationTextView.textField.text = saveEmployeeViewModel.getEmployeeDesignation()
+        competancyTextView.textField.text = saveEmployeeViewModel.getEmployeeCompetancyName()
+        projectTextView.textField.text = saveEmployeeViewModel.getEmployeeCurrentProjectName()
     }
     
     //MARK: - Method for Reset all textvalues
@@ -106,9 +156,8 @@ class AddEditEmployeeViewController: BaseViewController {
     func validate() -> Bool {
       do {
         _ = try nameTextView.textField.validatedText(validationType: ValidatorType.employeename)
-        _ = try projectTextView.textField.validatedText(validationType: ValidatorType.employeename)
-        _ = try competancyTextView.textField.validatedText(validationType: ValidatorType.employeename)
-        _ = try designationTextView.textField.validatedText(validationType: ValidatorType.employeename)
+        _ = try projectTextView.textField.validatedText(validationType: ValidatorType.projectname)
+        _ = try designationTextView.textField.validatedText(validationType: ValidatorType.designation)
         _ = try bandTextView.textField.validatedText(validationType: ValidatorType.band)
         
       } catch(let error) {

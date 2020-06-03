@@ -15,6 +15,8 @@ struct Constants {
     
     static let kCellIdentifier = "EmployeeListCell"
     static let kCompentancyCellIdentifier = "competancyCell"
+    static let kProjectCellIdentifier = "ProjectCell"
+
     static let employeeListTitle = "Employee List"
     static let addNewEmployee = "Add New Employee"
     static let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -27,6 +29,7 @@ struct Constants {
     static let errorTitle = "Error"
     static let success = "success"
     static let saveEmployeeSuccessMessage = "Employee record saved successfully!"
+    static let saveProjectSuccessMessage = "New Project added successfully!"
     static let message = "Message"
     static let alert = "Alert"
     static let defaultImage = UIImage(named: "default")

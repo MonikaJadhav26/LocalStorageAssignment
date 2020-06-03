@@ -14,9 +14,10 @@ protocol ValidatorConvertible {
 
 enum ValidatorType {
     case employeename
+    case projectname
+    case designation
     case requiredField(field: String)
     case band
-
 }
 
 enum VaildatorFactory {
@@ -25,7 +26,8 @@ enum VaildatorFactory {
         case .employeename: return EmployeeNameValidator()
         case .requiredField(let fieldName): return RequiredFieldValidator(fieldName)
         case .band: return BandValidator()
-
+        case .projectname:return ProjectNameValidator()
+        case .designation:return DesignationValidator()
             
         }
     }
@@ -85,6 +87,46 @@ struct EmployeeNameValidator: ValidatorConvertible {
             }
         } catch {
             throw ValidationError("Invalid Employee name, Employee name should not contain whitespaces,  or special characters")
+        }
+        return value
+    }
+}
+
+struct ProjectNameValidator: ValidatorConvertible {
+    func validated(_ value: String) throws -> String {
+        guard value.count >= 1 else {
+            throw ValidationError("Project name must contain more than one characters" )
+        }
+        guard value.count < 61 else {
+            throw ValidationError("Project name shoudn't conain more than 60 characters" )
+        }
+        
+        do {
+            if try NSRegularExpression(pattern: "^[a-zA-Z][a-zA-Z /\\;:.,()]*",  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+                throw ValidationError("Invalid Project name, Project name should not contain special characters")
+            }
+        } catch {
+            throw ValidationError("Invalid Project name, Project name should not contain special characters")
+        }
+        return value
+    }
+}
+
+struct DesignationValidator: ValidatorConvertible {
+    func validated(_ value: String) throws -> String {
+        guard value.count >= 4 else {
+            throw ValidationError("Designation must contain more than four characters" )
+        }
+        guard value.count < 31 else {
+            throw ValidationError("Designation shoudn't conain more than 30 characters" )
+        }
+        
+        do {
+            if try NSRegularExpression(pattern: "^[a-zA-Z][a-zA-Z /\\;:.,()]*",  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+                throw ValidationError("Invalid Designation, Designation should not contain numbers or special characters")
+            }
+        } catch {
+            throw ValidationError("Invalid Designation, Designation should not contain numbers or special characters")
         }
         return value
     }

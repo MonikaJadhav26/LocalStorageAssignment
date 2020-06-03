@@ -419,6 +419,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FCt-Al-9Ve" id="yu8-Gp-g8d"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gat-d9-fDt">
                                 <rect key="frame" x="356" y="98" width="50" height="40"/>
@@ -428,7 +431,42 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="FCt-Al-9Ve" eventType="touchUpInside" id="pQ6-Gv-HJj"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-uJ-7n3">
+                                <rect key="frame" x="8" y="146" width="398" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectCell" rowHeight="61" id="ZHD-7b-mYC">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZHD-7b-mYC" id="ZaB-TG-bUz">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yd-83-k4s">
+                                                    <rect key="frame" x="8" y="8" width="382" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7Yd-83-k4s" secondAttribute="trailing" constant="8" id="GSV-KW-8TH"/>
+                                                <constraint firstItem="7Yd-83-k4s" firstAttribute="leading" secondItem="ZaB-TG-bUz" secondAttribute="leading" constant="8" id="Xzy-cK-Ryo"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Yd-83-k4s" secondAttribute="bottom" constant="8" id="cqT-ru-1UH"/>
+                                                <constraint firstItem="7Yd-83-k4s" firstAttribute="top" secondItem="ZaB-TG-bUz" secondAttribute="top" constant="8" id="thi-wq-GdG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FCt-Al-9Ve" id="KQO-tb-Up5"/>
+                                    <outlet property="delegate" destination="FCt-Al-9Ve" id="5a7-AB-6gW"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -436,13 +474,22 @@
                             <constraint firstItem="CmH-zL-b8d" firstAttribute="leading" secondItem="4H8-mp-mh2" secondAttribute="leading" constant="8" id="BzZ-Bx-6tP"/>
                             <constraint firstItem="CmH-zL-b8d" firstAttribute="top" secondItem="gat-d9-fDt" secondAttribute="top" id="Fib-EI-grG"/>
                             <constraint firstItem="CmH-zL-b8d" firstAttribute="top" secondItem="4H8-mp-mh2" secondAttribute="top" constant="10" id="NVM-qd-Ge3"/>
+                            <constraint firstItem="dVF-uJ-7n3" firstAttribute="top" secondItem="CmH-zL-b8d" secondAttribute="bottom" constant="8" id="TiU-uK-oEs"/>
+                            <constraint firstItem="dVF-uJ-7n3" firstAttribute="leading" secondItem="4H8-mp-mh2" secondAttribute="leading" constant="8" id="VBu-sx-bZx"/>
+                            <constraint firstItem="4H8-mp-mh2" firstAttribute="trailing" secondItem="dVF-uJ-7n3" secondAttribute="trailing" constant="8" id="Yrg-r6-l2U"/>
                             <constraint firstItem="4H8-mp-mh2" firstAttribute="trailing" secondItem="gat-d9-fDt" secondAttribute="trailing" constant="8" id="oRJ-zC-5Zy"/>
                             <constraint firstItem="gat-d9-fDt" firstAttribute="leading" secondItem="CmH-zL-b8d" secondAttribute="trailing" constant="10" id="r5D-NQ-wb5"/>
                             <constraint firstItem="CmH-zL-b8d" firstAttribute="bottom" secondItem="gat-d9-fDt" secondAttribute="bottom" id="wG2-Or-dJ9"/>
+                            <constraint firstItem="4H8-mp-mh2" firstAttribute="bottom" secondItem="dVF-uJ-7n3" secondAttribute="bottom" id="yza-v0-cpo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4H8-mp-mh2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Project List" id="hSC-Nm-jTg"/>
+                    <connections>
+                        <outlet property="addButton" destination="gat-d9-fDt" id="FJ1-NH-awY"/>
+                        <outlet property="addProjectTextField" destination="CmH-zL-b8d" id="4v4-qK-jOV"/>
+                        <outlet property="projectListTableView" destination="dVF-uJ-7n3" id="L2f-Hz-OHM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ges-Ua-0cb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -42,12 +42,15 @@ class EmployeeListViewController: BaseViewController {
   }
     
   @objc func rightBarButtonItemTapped(sender : UIBarButtonItem) {
-    navigateToEmployeeDetailsScreen(isEdit: false)
+    navigateToEmployeeDetailsScreen(isEdit: false , employeeID : "")
   }
     
-    func navigateToEmployeeDetailsScreen(isEdit : Bool) {
+    func navigateToEmployeeDetailsScreen(isEdit : Bool, employeeID : String) {
         let addViewController = UIStoryboard.init(name: Constants.stodyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.addEmployeeView) as? AddEditEmployeeViewController
         addViewController?.isEdit = isEdit
+        if isEdit {
+            addViewController?.idForEditEmployee = employeeID
+        }
         self.navigationController?.pushViewController(addViewController!, animated: true)
     }
 
@@ -89,7 +92,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigateToEmployeeDetailsScreen(isEdit: true)
+        navigateToEmployeeDetailsScreen(isEdit: true, employeeID: employeeListViewModel.getEmployeeID(indexPath: indexPath))
     }
     
     

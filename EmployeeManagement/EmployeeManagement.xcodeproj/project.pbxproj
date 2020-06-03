@@ -33,6 +33,7 @@
 		D8F2C7AA24863B7500EC23F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7A924863B7500EC23F2 /* BaseViewController.swift */; };
 		D8F2C7AD24864D1200EC23F2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AC24864D1200EC23F2 /* DataModel.swift */; };
 		D8F2C7AF24864D5100EC23F2 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */; };
+		D8F2C7B12487654900EC23F2 /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7B02487654900EC23F2 /* AddProjectViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		D8F2C7A924863B7500EC23F2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D8F2C7AC24864D1200EC23F2 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		D8F2C7B02487654900EC23F2 /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		D8E60EF22475121C005AF5A6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D8F2C7B02487654900EC23F2 /* AddProjectViewModel.swift */,
 			);
 			name = ViewModel;
 			path = EmployeeManagement/ViewControllers/ProjectList/ViewModel;
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F2C7B12487654900EC23F2 /* AddProjectViewModel.swift in Sources */,
 				D8E60EE824751203005AF5A6 /* AppDelegate.swift in Sources */,
 				D8E60EFF247512DD005AF5A6 /* Validators.swift in Sources */,
 				D8E60F0224751387005AF5A6 /* EmployeeListViewController.swift in Sources */,

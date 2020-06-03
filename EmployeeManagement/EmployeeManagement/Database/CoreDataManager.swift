@@ -44,30 +44,40 @@ class CoreDataManager {
     //MARK: - Methods for performing operations on database
     func insertEmployee(employee : EmployeeInfo,completion: @escaping (Result<Bool, Error>) -> Void)  {
         
-        if !checkRecordForSelectedIdIsExists(id: employee.id ?? "")  {
+       // if !checkRecordForSelectedIdIsExists(id: employee.id ?? "")  {
             
             let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
             
-            let entity = NSEntityDescription.entity(forEntityName: "Employee",
-                                                    in: managedContext)!
-            
-            let newCity = NSManagedObject(entity: entity,
-                                          insertInto: managedContext)
-            
+            let entity = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext)!
+                                                     
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
             
         let predicate = NSPredicate(format: "(id = %@)", employee.id ?? "")
             fetchRequest.entity = entity
             fetchRequest.predicate = predicate
-            
-        newCity.setValue(employee.name, forKey: "name")
-        newCity.setValue(employee.id, forKey: "id")
-        newCity.setValue(employee.band, forKey: "band")
-        newCity.setValue(employee.competancy, forKey: "competancy")
-        newCity.setValue(employee.designation, forKey: "designation")
-        newCity.setValue(employee.currentProject, forKey: "currentProject")
-
-            
+          
+            do {
+                       let result = try managedContext.fetch(fetchRequest)
+                       if (result.count > 0) {
+                           let updatedEmployee = (result[0] as! NSManagedObject) as! Employee
+                              updatedEmployee.setValue(employee.name, forKey: "name")
+                              updatedEmployee.setValue(employee.band, forKey: "band")
+                              updatedEmployee.setValue(employee.competancy, forKey: "competancy")
+                              updatedEmployee.setValue(employee.designation, forKey: "designation")
+                              updatedEmployee.setValue(employee.currentProject, forKey: "currentProject")
+                   }else {
+                        let newEmployee = NSManagedObject(entity: entity, insertInto: managedContext)
+                               newEmployee.setValue(employee.name, forKey: "name")
+                               newEmployee.setValue(employee.id, forKey: "id")
+                               newEmployee.setValue(employee.band, forKey: "band")
+                               newEmployee.setValue(employee.competancy, forKey: "competancy")
+                               newEmployee.setValue(employee.designation, forKey: "designation")
+                               newEmployee.setValue(employee.currentProject, forKey: "currentProject")
+                }
+        }catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
             do {
                 try managedContext.save()
                 completion(.success(true))
@@ -75,14 +85,14 @@ class CoreDataManager {
                 print("Could not save. \(error), \(error.userInfo)")
                 completion(.failure(error))
             }
-        }
+       // }
     }
     
     func checkRecordForSelectedIdIsExists(id : String) -> Bool {
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "Employee",
-                                                in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext)!
+                                               
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         let predicate = NSPredicate(format: "(id = %d)", id)
@@ -93,6 +103,9 @@ class CoreDataManager {
             if (result.count > 0) {
                 let employee = (result[0] as! NSManagedObject) as! Employee
                 if employee.id == id {
+                    
+                    
+                    
                     return true
                 }
             }
@@ -103,9 +116,34 @@ class CoreDataManager {
         return false
     }
     
+    func fetchPerticularEmployeeRecord(id : String, completion: @escaping (Result<[EmployeeInfo], Error>) -> Void) {
+        let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+               let fetchRequest = NSFetchRequest<Employee>(entityName: "Employee")
+               let entityDescription = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext)
+               fetchRequest.entity = entityDescription
+               let predicate = NSPredicate(format: "(id = %@)", id)
+                  fetchRequest.predicate = predicate
+               do {
+                   var  employeeArray =  [EmployeeInfo]()
+                   let result = try managedContext.fetch(fetchRequest)
+                   if (result.count > 0) {
+                       for employee in result {
+                        if employee.id == id {
+                           let empObj = EmployeeInfo(name: employee.name ?? "", id: employee.id ?? "", band: employee.band ?? "", competancy: employee.competancy ?? "", currentProject: employee.currentProject ?? "" , designation: employee.designation ?? "")
+                           employeeArray.append(empObj)
+                        }
+                       }
+                   }
+                   completion(.success(employeeArray))
+               } catch {
+                   let fetchError = error as NSError
+                   print(fetchError)
+                   completion(.failure(fetchError))
+               }
+    }
+    
     func fetchAllEmployee(completion: @escaping (Result<[EmployeeInfo], Error>) -> Void)  {
         
-        employeeList.removeAll()
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Employee>(entityName: "Employee")
         let entityDescription = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext)
@@ -128,6 +166,58 @@ class CoreDataManager {
         }
     }
     
+    
+    func insertProjects(project : ProjectInfo,completion: @escaping (Result<Bool, Error>) -> Void)  {
+        
+       // if !checkRecordForSelectedIdIsExists(id: employee.id ?? "")  {
+            
+            let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "Project", in: managedContext)!
+//
+//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+//
+//        let predicate = NSPredicate(format: "(name = %@)", employee.name ?? "")
+//            fetchRequest.entity = entity
+//            fetchRequest.predicate = predicate
+          
+                      
+                        let newProject = NSManagedObject(entity: entity, insertInto: managedContext)
+                        newProject.setValue(project.name, forKey: "name")
+                    do {
+                try managedContext.save()
+                completion(.success(true))
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+                completion(.failure(error))
+            }
+       // }
+    }
+    
+    
+    func fetchAllProjects(completion: @escaping (Result<[ProjectInfo], Error>) -> Void)  {
+        
+        let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Project>(entityName: "Project")
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Project", in: managedContext)
+        
+        fetchRequest.entity = entityDescription
+        do {
+            var  projectsArray =  [ProjectInfo]()
+            let result = try managedContext.fetch(fetchRequest)
+            if (result.count > 0) {
+                for employee in result {
+                    let projObj = ProjectInfo(name: employee.name ?? "")
+                    projectsArray.append(projObj)
+                }
+            }
+            completion(.success(projectsArray))
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+            completion(.failure(fetchError))
+        }
+    }
     
     
     

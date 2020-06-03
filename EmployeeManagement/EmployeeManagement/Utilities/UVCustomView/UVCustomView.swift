@@ -97,15 +97,6 @@ class UVCustomView: UIView {
     }
     //MARK: - Nib File Setup Methods
     
-    func addLeftView(){
-        let label = UILabel(frame:(CGRect(x:0, y:0, width: 25, height:23_)))
-        label.textAlignment = .center
-        label.text = "+91"
-        label.font = UIFont.systemFont(ofSize: 14.0)
-        textField.leftView = label
-        textField.leftViewMode = .always
-    }
-    
     private func nibViewSetup() {
         backgroundColor = UIColor.white
         //load nib
@@ -308,7 +299,6 @@ extension UVCustomView : UIPickerViewDataSource, UIPickerViewDelegate {
         return pickerOption[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-      //  textField.text = pickerOption[row]
         customViewTextFieldDelegate?.pickerValueDidChange!(pickerValue: pickerOption[pickerView.selectedRow(inComponent: 0)] as String, textField:textField)
     }
 }

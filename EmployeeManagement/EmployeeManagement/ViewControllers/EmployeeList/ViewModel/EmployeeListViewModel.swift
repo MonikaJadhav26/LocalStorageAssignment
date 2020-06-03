@@ -21,6 +21,7 @@ class EmployeeListViewModel : NSObject {
             DispatchQueue.main.async {
                 switch(result) {
                 case .success(let result):
+                    self.employeeList.removeAll()
                     self.employeeList = result
                     completion(.success(true))
                 case .failure(let error):
