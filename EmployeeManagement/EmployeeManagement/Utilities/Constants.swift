@@ -37,5 +37,12 @@ struct Constants {
     static let grayButtonColour = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
     static let greenButtonColour = UIColor(red: 38/255, green: 146/255, blue: 66/255, alpha: 1)
     static let accessibilityIdentifierForEmployeeListTable = "EmployeeListTable"
-    static let competancyArray = ["Mobility","UI&UX","Testing","Web","Server"]
+    static let competancyArray = ["Android","iOS","UX","Tester"]
+    
+    enum Competancy : String {
+        case android = "Android"
+        case iOS = "iOS"
+        case ux = "UX"
+        case tester = "Tester"
+    }
 }

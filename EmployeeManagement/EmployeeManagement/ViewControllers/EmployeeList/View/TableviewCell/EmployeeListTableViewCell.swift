@@ -23,7 +23,7 @@ class EmployeeListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        employeeProfileImage.layer.cornerRadius = employeeProfileImage.frame.size.width / 2
+       // employeeProfileImage.layer.cornerRadius = employeeProfileImage.frame.size.width / 2
         backgroundContainerView.layer.cornerRadius = 5
         backgroundContainerView.layer.shadowColor = UIColor.black.cgColor
         backgroundContainerView.layer.shadowOpacity = 1

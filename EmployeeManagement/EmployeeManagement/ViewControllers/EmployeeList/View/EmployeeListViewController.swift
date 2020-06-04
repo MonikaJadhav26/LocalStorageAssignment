@@ -86,6 +86,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
         cell.employeeCompetancyLabel.text = employeeListViewModel.getEmployeeCompetancyName(indexPath: indexPath)
         cell.employeeDesignationLabel.text = employeeListViewModel.getEmployeeDesignation(indexPath: indexPath)
         cell.employeeCurrentProjectLabel.text = employeeListViewModel.getEmployeeCurrentProjectName(indexPath: indexPath)
+        cell.employeeProfileImage.image = employeeListViewModel.getEmployeeProfileIcon(indexPath:indexPath, competancyName :employeeListViewModel.getEmployeeCompetancyName(indexPath: indexPath))
         
         return cell
     }

@@ -76,5 +76,21 @@ class EmployeeListViewModel : NSObject {
     func getEmployeeCurrentProjectName(indexPath: IndexPath) -> String {
         return "Project :\(self.employeeList[indexPath.row].currentProject ?? "")"
     }
+    
+    func getEmployeeProfileIcon(indexPath: IndexPath , competancyName : String) -> UIImage {
+        
+        let competancy = Constants.Competancy(rawValue: competancyName.replacingOccurrences(of: "Competancy :", with: ""))!
+        
+        switch competancy {
+        case .iOS:
+            return UIImage(named:"ios")!
+        case .android:
+            return UIImage(named:"android")!
+        case .ux:
+            return UIImage(named:"ux")!
+        default:
+            return UIImage(named:"tester")!
+        }
+    }
 }
 
