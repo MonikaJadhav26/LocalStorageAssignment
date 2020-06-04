@@ -70,7 +70,7 @@ class EmployeeListViewModel : NSObject {
     }
     
     func getEmployeeCompetancyName(indexPath: IndexPath) -> String {
-        return "Competancy :\(self.employeeList[indexPath.row].competancy ?? "")"
+        return "Competency :\(self.employeeList[indexPath.row].competancy ?? "")"
     }
     
     func getEmployeeCurrentProjectName(indexPath: IndexPath) -> String {
@@ -79,7 +79,7 @@ class EmployeeListViewModel : NSObject {
     
     func getEmployeeProfileIcon(indexPath: IndexPath , competancyName : String) -> UIImage {
         
-        let competancy = Constants.Competancy(rawValue: competancyName.replacingOccurrences(of: "Competancy :", with: ""))!
+        let competancy = Constants.Competancy(rawValue: competancyName.replacingOccurrences(of: "Competency :", with: ""))!
         
         switch competancy {
         case .iOS:

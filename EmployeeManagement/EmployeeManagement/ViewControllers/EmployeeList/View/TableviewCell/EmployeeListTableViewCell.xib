@@ -118,7 +118,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="profile" width="20" height="20"/>
+        <image name="profile" width="35" height="35"/>
         <namedColor name="backViewColour">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
