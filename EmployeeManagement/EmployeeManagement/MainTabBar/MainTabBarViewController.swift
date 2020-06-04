@@ -25,7 +25,10 @@ class MainTabBarViewController: UITabBarController {
         navControllerForProjectList.tabBarItem.title = "Projects"
         
         self.viewControllers = [navControllerForEmployeeList,navControllerForProjectList]
-        
+      
+        UITabBarItem.appearance().setTitleTextAttributes(
+               [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 20),
+                  NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
     }
     
 }

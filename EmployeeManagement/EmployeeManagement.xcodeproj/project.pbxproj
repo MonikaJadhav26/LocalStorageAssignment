@@ -204,7 +204,6 @@
 		D8E60EE92475121C005AF5A6 /* EmployeeList */ = {
 			isa = PBXGroup;
 			children = (
-				D8E60EEB2475121C005AF5A6 /* Model */,
 				D8E60EEC2475121C005AF5A6 /* View */,
 				D8E60EEA2475121C005AF5A6 /* ViewModel */,
 			);
@@ -220,13 +219,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D8E60EEB2475121C005AF5A6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D8E60EEC2475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +231,6 @@
 		D8E60EED2475121C005AF5A6 /* AddEditEmployee */ = {
 			isa = PBXGroup;
 			children = (
-				D8E60EEF2475121C005AF5A6 /* Model */,
 				D8E60EF02475121C005AF5A6 /* View */,
 				D8E60EEE2475121C005AF5A6 /* ViewModel */,
 			);
@@ -255,13 +246,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D8E60EEF2475121C005AF5A6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D8E60EF02475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +257,6 @@
 		D8E60EF12475121C005AF5A6 /* ProjectList */ = {
 			isa = PBXGroup;
 			children = (
-				D8E60EF32475121C005AF5A6 /* Model */,
 				D8E60EF42475121C005AF5A6 /* View */,
 				D8E60EF22475121C005AF5A6 /* ViewModel */,
 			);
@@ -289,13 +272,6 @@
 			name = ViewModel;
 			path = EmployeeManagement/ViewControllers/ProjectList/ViewModel;
 			sourceTree = SOURCE_ROOT;
-		};
-		D8E60EF32475121C005AF5A6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
 		};
 		D8E60EF42475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;

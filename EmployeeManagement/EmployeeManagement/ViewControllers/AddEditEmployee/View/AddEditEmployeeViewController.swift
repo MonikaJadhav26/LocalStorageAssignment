@@ -107,7 +107,7 @@ class AddEditEmployeeViewController: BaseViewController {
             getEmployeeData()
         }else {
             save.isEnabled = false
-            save.backgroundColor = .lightGray
+            save.backgroundColor = .darkGray
         }
     }
     
@@ -254,7 +254,7 @@ extension AddEditEmployeeViewController:  UVCustomViewTextFieldDelegate  {
             save.backgroundColor = Constants.greenButtonColour
         } else {
             save.isEnabled = false
-            save.backgroundColor = .lightGray
+            save.backgroundColor = .darkGray
         }
     }
     func doneButtonTappedForPickerView(sender : UIBarButtonItem , pickerView : UIPickerView , textField : UITextField, pickerValue: String) {
