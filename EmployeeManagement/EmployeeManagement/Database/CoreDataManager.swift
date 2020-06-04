@@ -44,7 +44,6 @@ class CoreDataManager {
     //MARK: - Methods for performing operations on database
     func insertEmployee(employee : EmployeeInfo,completion: @escaping (Result<Bool, Error>) -> Void)  {
         
-        
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext)!

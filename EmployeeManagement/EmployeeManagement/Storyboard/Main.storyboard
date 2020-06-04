@@ -43,7 +43,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="ID"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter id"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter id"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="accessesaryView">
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
@@ -57,7 +57,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Full Name"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter full name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter full name"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Am-W4-BYL" customClass="UVCustomView" customModule="EmployeeManagement" customModuleProvider="target">
@@ -68,7 +68,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Band"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter band"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter band"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1U-8y-PUi" customClass="UVCustomView" customModule="EmployeeManagement" customModuleProvider="target">
@@ -79,7 +79,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Designation"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter designation"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter designation"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuY-u3-mZL" customClass="UVCustomView" customModule="EmployeeManagement" customModuleProvider="target">
@@ -90,7 +90,10 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Competency"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter competency"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select competency"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="accessesaryView">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-TA-GWq">
@@ -124,7 +127,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Current Project"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="enter current project"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select current project"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="accessesaryView">
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
@@ -185,7 +188,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.96033205104281483" green="0.97573961138757825" blue="0.98763353298158207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96465145808368635" green="0.9801517539315745" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="F5X-s6-vM3" firstAttribute="top" secondItem="dJx-sR-jbq" secondAttribute="top" constant="40" id="7zv-TB-gJn"/>
                             <constraint firstAttribute="trailing" secondItem="F5X-s6-vM3" secondAttribute="trailing" id="axg-fa-vPz"/>
@@ -373,7 +376,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="3AW-5H-7TL"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UiJ-3J-xjT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UiJ-3J-xjT">
                                 <rect key="frame" x="0.0" y="132" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -435,7 +438,7 @@
                                     <action selector="addButtonClicked:" destination="FCt-Al-9Ve" eventType="touchUpInside" id="pQ6-Gv-HJj"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-uJ-7n3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-uJ-7n3">
                                 <rect key="frame" x="8" y="146" width="398" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>

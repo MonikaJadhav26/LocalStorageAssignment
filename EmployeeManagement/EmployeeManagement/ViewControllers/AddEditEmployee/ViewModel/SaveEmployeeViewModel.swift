@@ -15,6 +15,7 @@ class SaveEmployeeViewModel : NSObject {
     var employeeList = Array<EmployeeInfo>()
     var projectList = Array<ProjectInfo>()
     
+    
     //MARK: - Create new Employee
     func saveNewEmployee(newEmployee: EmployeeInfo ,completion: @escaping (Result<Bool, Error>) -> Void) {
         CoreDataManager.sharedManager.insertEmployee(employee: newEmployee) { (result) in
@@ -58,6 +59,8 @@ class SaveEmployeeViewModel : NSObject {
                }
            }
     }
+    
+    
     
     func getPickerOptionArray() -> Array<String> {
         var pickerOptions = Array<String>()

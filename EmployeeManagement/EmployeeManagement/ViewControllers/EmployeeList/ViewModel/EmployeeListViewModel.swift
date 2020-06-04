@@ -13,6 +13,8 @@ class EmployeeListViewModel : NSObject {
     
     //MARK: - Variables
     var employeeList = Array<EmployeeInfo>()
+    var searchedEmployeeData = [EmployeeInfo]()
+    var originalEmployeeData = [EmployeeInfo]()
     
     
     //MARK: - Fetch Employee List
@@ -21,14 +23,24 @@ class EmployeeListViewModel : NSObject {
             DispatchQueue.main.async {
                 switch(result) {
                 case .success(let result):
-                    self.employeeList.removeAll()
-                    self.employeeList = result
+                    self.originalEmployeeData = result
+                    self.employeeList = self.originalEmployeeData
                     completion(.success(true))
                 case .failure(let error):
                     completion(.failure(error))
                 }
             }
         }
+    }
+    
+    func searchEmployee(with searchText: String, completion: @escaping () -> Void) {
+        if !searchText.isEmpty {
+            searchedEmployeeData = self.employeeList
+            self.employeeList = searchedEmployeeData.filter({ $0.name!.lowercased().contains(searchText.lowercased())})
+        } else {
+            self.employeeList = self.originalEmployeeData
+        }
+        completion()
     }
     
     func deletePerticularEmployeeRecordFromDatabase(employeeID : String) {
@@ -58,11 +70,11 @@ class EmployeeListViewModel : NSObject {
     }
     
     func getEmployeeCompetancyName(indexPath: IndexPath) -> String {
-        return self.employeeList[indexPath.row].competancy ?? ""
+        return "Competancy :\(self.employeeList[indexPath.row].competancy ?? "")"
     }
     
     func getEmployeeCurrentProjectName(indexPath: IndexPath) -> String {
-        return self.employeeList[indexPath.row].currentProject ?? ""
+        return "Project :\(self.employeeList[indexPath.row].currentProject ?? "")"
     }
 }
 

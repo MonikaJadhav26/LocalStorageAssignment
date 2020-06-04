@@ -27,6 +27,7 @@ class AddEditEmployeeViewController: BaseViewController {
     let saveEmployeeViewModel = SaveEmployeeViewModel()
     var isEdit : Bool?
     var idForEditEmployee : String?
+    var isEditOn : Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,17 +98,12 @@ class AddEditEmployeeViewController: BaseViewController {
       self.title = Constants.addNewEmployee
         
         if isEdit! {
+            setControlsForEdit(textColour : .darkGray , isEditOn : false)
+            isEditOn = true
             let rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(rightBarButtonItemTapped(sender:)))
                  self.navigationItem.rightBarButtonItem  = rightBarButtonItem
             iDView.textField.isUserInteractionEnabled =  false
-//            nameTextView.textField.isUserInteractionEnabled = false
-//            designationTextView.textField.isUserInteractionEnabled = false
-//            competancyTextView.textField.isUserInteractionEnabled = false
-//            projectTextView.textField.isUserInteractionEnabled = false
-//            bandTextView.textField.isUserInteractionEnabled = false
-//            iDView.textField.textColor = .darkGray
-            save.isEnabled = true
-            save.backgroundColor = Constants.greenButtonColour
+            iDView.textField.textColor = .darkGray
             getEmployeeData()
         }else {
             save.isEnabled = false
@@ -116,8 +112,25 @@ class AddEditEmployeeViewController: BaseViewController {
     }
     
     @objc func rightBarButtonItemTapped(sender : UIBarButtonItem) {
-      
+     setControlsForEdit(textColour : .black , isEditOn : true)
+        if isEditOn! {
+            self.save.isEnabled = true
+            self.save.backgroundColor = Constants.greenButtonColour
+        }else {
+            self.save.isEnabled = false
+            self.save.backgroundColor = .lightGray
+        }
     }
+    
+    func setControlsForEdit(textColour : UIColor , isEditOn : Bool) {
+        nameTextView.textField.isUserInteractionEnabled = isEditOn
+        designationTextView.textField.isUserInteractionEnabled = isEditOn
+        competancyTextView.textField.isUserInteractionEnabled = isEditOn
+        projectTextView.textField.isUserInteractionEnabled = isEditOn
+        bandTextView.textField.isUserInteractionEnabled = isEditOn
+        competancyTableView.isUserInteractionEnabled = isEditOn
+    }
+    
      //MARK: - Call to get perticular employee data
         func getEmployeeData() {
           self.showActivityIndicator()
@@ -179,9 +192,13 @@ class AddEditEmployeeViewController: BaseViewController {
           switch(result) {
           case .success:
            self.hideActivityIndicator()
-            self.resetTextField()
+           if self.isEdit! {
+            self.setControlsForEdit(textColour : .darkGray , isEditOn : false)
             self.save.isEnabled = false
             self.save.backgroundColor = .lightGray
+           }else {
+            self.resetTextField()
+           }
            self.showAlert(message: Constants.saveEmployeeSuccessMessage,title : Constants.message, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
           case .failure(let error):
             self.hideActivityIndicator()
@@ -222,13 +239,14 @@ extension AddEditEmployeeViewController : UITableViewDelegate , UITableViewDataS
   
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 40
+    return 30
   }
   
 }
 extension AddEditEmployeeViewController:  UVCustomViewTextFieldDelegate  {
     func textFieldTextDidChange(textField:UITextField) {
      
+        
         if !((bandTextView.textField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((designationTextView.textField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((competancyTextView.textField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((projectTextView.textField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((nameTextView.textField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!{
              
              save.isEnabled = true
@@ -251,3 +269,5 @@ extension AddEditEmployeeViewController:  UVCustomViewTextFieldDelegate  {
        }
 
 }
+
+

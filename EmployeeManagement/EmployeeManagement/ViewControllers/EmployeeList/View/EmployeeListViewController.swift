@@ -85,7 +85,6 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
     cell.employeeCompetancyLabel.text = employeeListViewModel.getEmployeeCompetancyName(indexPath: indexPath)
     cell.employeeDesignationLabel.text = employeeListViewModel.getEmployeeDesignation(indexPath: indexPath)
     cell.employeeCurrentProjectLabel.text = employeeListViewModel.getEmployeeCurrentProjectName(indexPath: indexPath)
-    cell.employeeProfileImage.image = Constants.defaultImage
 
     return cell
   }
@@ -127,12 +126,11 @@ extension EmployeeListViewController : UISearchBarDelegate {
   }
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //employeeListViewModel.searchEmployee(with: searchText) {
+    employeeListViewModel.searchEmployee(with: searchText) {
       self.employeeListTableView.reloadData()
       if searchText.isEmpty {
         searchBar.resignFirstResponder()
       }
     }
   }
-
-
+}

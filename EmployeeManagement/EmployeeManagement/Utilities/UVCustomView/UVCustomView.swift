@@ -84,6 +84,7 @@ class UVCustomView: UIView {
                 addPickerViewToTextfiled()
                 addToolBarOnTextView()
             }
+           
         }
     }
     required init(coder aDecoder: NSCoder) {
@@ -122,22 +123,30 @@ class UVCustomView: UIView {
     
     //MARK: - Notification handler when keyboard will show
     @objc private func willShowKeyboard(notification:Notification){
-        //print("Key board did show")
         
+        if accessesaryView == 2 {
+            textField.resignFirstResponder()
+        }else {
         let infoDict = notification.userInfo
         
         let keyboardHeight = getKeyboardHeight(infoDict: infoDict!)
-        animateKeyboard(height: keyboardHeight - 79)
+
+            if UIDevice().name == "iPhone 8" || UIDevice().name == "iPhone 8 Plus" {
+                animateKeyboard(height: keyboardHeight - 49)
+
+            }else {
+                animateKeyboard(height: keyboardHeight - 79)
+
+            }
         var contentInset:UIEdgeInsets = self.scrollView?.contentInset ?? .zero
                    contentInset.bottom = keyboardHeight
                    self.scrollView?.contentInset = contentInset
+        }
     }
     
     //MARK: - Notification handler when keyboard will hide
     @objc private func willHideKeyboard(notification:Notification){
-        //print("Keyboard will hide")
         animateKeyboard(height: 0)
-        
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInset
     }
@@ -190,7 +199,6 @@ class UVCustomView: UIView {
     }
     
     @objc private func textFieldTextdidChange(textField:UITextField){
-        
         customViewTextFieldDelegate?.textFieldTextDidChange(textField: textField)
     }
     
@@ -205,7 +213,6 @@ class UVCustomView: UIView {
   
     func getCalenderMaxDate() -> Date {
         let date = NSCalendar.current.date(byAdding: .year, value: -15, to: Date())
-        
         return date!
     }
     
@@ -323,6 +330,12 @@ extension UVCustomView:UITextFieldDelegate{
         return true
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if accessesaryView == 2 {
+         customViewTextFieldDelegate?.textFieldTextDidChange(textField: textField)
+        }
+        return true
+    }
   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

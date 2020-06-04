@@ -25,6 +25,7 @@ class MainTabBarViewController: UITabBarController {
     navControllerForProjectList.tabBarItem.title = "Projects"
 
     self.viewControllers = [navControllerForEmployeeList,navControllerForProjectList]
+    
   }
 
 }

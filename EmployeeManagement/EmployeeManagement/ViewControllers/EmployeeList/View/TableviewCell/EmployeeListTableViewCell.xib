@@ -21,22 +21,22 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo6-9P-Zxb">
                         <rect key="frame" x="8" y="8" width="420" height="119"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dbv-C3-k4y">
-                                <rect key="frame" x="20" y="9" width="70" height="70"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Dbv-C3-k4y">
+                                <rect key="frame" x="12" y="9" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="UR6-NN-BYu"/>
-                                    <constraint firstAttribute="height" constant="70" id="nPs-lY-BOR"/>
+                                    <constraint firstAttribute="width" constant="80" id="UR6-NN-BYu"/>
+                                    <constraint firstAttribute="height" constant="80" id="nPs-lY-BOR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobility" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQh-pw-fL4">
-                                <rect key="frame" x="112" y="62" width="300" height="21"/>
+                                <rect key="frame" x="114" y="62" width="298" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" name="grayTextColour"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monika Jadhav" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58C-eo-hL9">
-                                <rect key="frame" x="112" y="8" width="300" height="21"/>
+                                <rect key="frame" x="114" y="8" width="298" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="i7i-Kt-xat"/>
@@ -46,21 +46,21 @@
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Software Engineer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWe-uA-vmb">
-                                <rect key="frame" x="112" y="35" width="300" height="21"/>
+                                <rect key="frame" x="114" y="35" width="298" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" name="grayTextColour"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATT FirstNet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWF-Tn-V0Y">
-                                <rect key="frame" x="112" y="89" width="300" height="21"/>
+                                <rect key="frame" x="114" y="89" width="298" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" name="grayTextColour"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID : 565663" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkW-j2-5qP">
-                                <rect key="frame" x="5" y="89" width="97.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID : 565663" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkW-j2-5qP">
+                                <rect key="frame" x="5" y="89" width="99.5" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" name="grayTextColour"/>
@@ -81,7 +81,7 @@
                             <constraint firstItem="58C-eo-hL9" firstAttribute="height" secondItem="uWe-uA-vmb" secondAttribute="height" id="Ma1-LM-09N"/>
                             <constraint firstItem="uWe-uA-vmb" firstAttribute="top" secondItem="58C-eo-hL9" secondAttribute="bottom" constant="6" id="T6g-gA-W4o"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="trailing" secondItem="uWe-uA-vmb" secondAttribute="trailing" id="UdL-vW-lUK"/>
-                            <constraint firstItem="Dbv-C3-k4y" firstAttribute="leading" secondItem="jo6-9P-Zxb" secondAttribute="leading" constant="20" id="VM6-f8-jhT"/>
+                            <constraint firstItem="Dbv-C3-k4y" firstAttribute="leading" secondItem="jo6-9P-Zxb" secondAttribute="leading" constant="12" id="VM6-f8-jhT"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="leading" secondItem="Dbv-C3-k4y" secondAttribute="trailing" constant="22" id="XFc-1O-vXV"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="height" secondItem="wQh-pw-fL4" secondAttribute="height" id="ZpU-sL-rFV"/>
                             <constraint firstItem="wQh-pw-fL4" firstAttribute="top" secondItem="58C-eo-hL9" secondAttribute="bottom" constant="33" id="cNb-Cg-ceL"/>
@@ -118,6 +118,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="profile" width="20" height="20"/>
         <namedColor name="backViewColour">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
