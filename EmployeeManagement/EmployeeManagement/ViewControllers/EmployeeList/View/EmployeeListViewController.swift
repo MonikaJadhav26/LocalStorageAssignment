@@ -25,6 +25,7 @@ class EmployeeListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getEmployeeListFromURL()
+        searchBar.text = ""
     }
     
     //MARK: - Method for UI setup
