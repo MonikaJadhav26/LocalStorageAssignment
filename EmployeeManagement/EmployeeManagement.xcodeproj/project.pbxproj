@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D8861F22247530D200D76626 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F21247530D200D76626 /* MainTabBarViewController.swift */; };
 		D8861F242475322800D76626 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F232475322800D76626 /* ProjectListViewController.swift */; };
-		D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F252475651F00D76626 /* AddEmployeeViewController.swift */; };
 		D8861F2A2475671B00D76626 /* EmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */; };
 		D8861F2B2475671B00D76626 /* EmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */; };
 		D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E60ED724750593005AF5A6 /* Assets.xcassets */; };
@@ -34,12 +33,30 @@
 		D8F2C7AD24864D1200EC23F2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AC24864D1200EC23F2 /* DataModel.swift */; };
 		D8F2C7AF24864D5100EC23F2 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */; };
 		D8F2C7B12487654900EC23F2 /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2C7B02487654900EC23F2 /* AddProjectViewModel.swift */; };
+		D8FB55F72488D46E009AB6BF /* EmployeeManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB55F62488D46E009AB6BF /* EmployeeManagementTests.swift */; };
+		D8FF312B2488D831004B7877 /* EmployeeManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF312A2488D831004B7877 /* EmployeeManagementUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8FB55F92488D46E009AB6BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8E60EC02475058D005AF5A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8E60EC72475058D005AF5A6;
+			remoteInfo = EmployeeManagement;
+		};
+		D8FB56072488D479009AB6BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8E60EC02475058D005AF5A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8E60EC72475058D005AF5A6;
+			remoteInfo = EmployeeManagement;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D8861F21247530D200D76626 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		D8861F232475322800D76626 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
-		D8861F252475651F00D76626 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		D8861F282475671B00D76626 /* EmployeeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeListTableViewCell.xib; sourceTree = "<group>"; };
 		D8861F292475671B00D76626 /* EmployeeListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		D8E60EC82475058D005AF5A6 /* EmployeeManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,10 +83,30 @@
 		D8F2C7AC24864D1200EC23F2 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		D8F2C7AE24864D5100EC23F2 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		D8F2C7B02487654900EC23F2 /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
+		D8FB55F42488D46E009AB6BF /* EmployeeManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeManagementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FB55F62488D46E009AB6BF /* EmployeeManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManagementTests.swift; sourceTree = "<group>"; };
+		D8FB55F82488D46E009AB6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FB56022488D479009AB6BF /* EmployeeManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FB56062488D479009AB6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FF312A2488D831004B7877 /* EmployeeManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManagementUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D8E60EC52475058D005AF5A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FB55F12488D46E009AB6BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FB55FF2488D479009AB6BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -101,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				D8E60ECA2475058D005AF5A6 /* EmployeeManagement */,
+				D8FB55F52488D46E009AB6BF /* EmployeeManagementTests */,
+				D8FB56032488D479009AB6BF /* EmployeeManagementUITests */,
 				D8E60EC92475058D005AF5A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				D8E60EC82475058D005AF5A6 /* EmployeeManagement.app */,
+				D8FB55F42488D46E009AB6BF /* EmployeeManagementTests.xctest */,
+				D8FB56022488D479009AB6BF /* EmployeeManagementUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,7 +265,6 @@
 		D8E60EF02475121C005AF5A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D8861F252475651F00D76626 /* AddEmployeeViewController.swift */,
 				D8F2C7942485131900EC23F2 /* AddEditEmployeeViewController.swift */,
 			);
 			path = View;
@@ -304,6 +344,24 @@
 			path = EmployeeManagement/Model;
 			sourceTree = SOURCE_ROOT;
 		};
+		D8FB55F52488D46E009AB6BF /* EmployeeManagementTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8FB55F62488D46E009AB6BF /* EmployeeManagementTests.swift */,
+				D8FB55F82488D46E009AB6BF /* Info.plist */,
+			);
+			path = EmployeeManagementTests;
+			sourceTree = "<group>";
+		};
+		D8FB56032488D479009AB6BF /* EmployeeManagementUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8FB56062488D479009AB6BF /* Info.plist */,
+				D8FF312A2488D831004B7877 /* EmployeeManagementUITests.swift */,
+			);
+			path = EmployeeManagementUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +382,42 @@
 			productReference = D8E60EC82475058D005AF5A6 /* EmployeeManagement.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D8FB55F32488D46E009AB6BF /* EmployeeManagementTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8FB55FB2488D46E009AB6BF /* Build configuration list for PBXNativeTarget "EmployeeManagementTests" */;
+			buildPhases = (
+				D8FB55F02488D46E009AB6BF /* Sources */,
+				D8FB55F12488D46E009AB6BF /* Frameworks */,
+				D8FB55F22488D46E009AB6BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8FB55FA2488D46E009AB6BF /* PBXTargetDependency */,
+			);
+			name = EmployeeManagementTests;
+			productName = EmployeeManagementTests;
+			productReference = D8FB55F42488D46E009AB6BF /* EmployeeManagementTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8FB56012488D479009AB6BF /* EmployeeManagementUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8FB56092488D479009AB6BF /* Build configuration list for PBXNativeTarget "EmployeeManagementUITests" */;
+			buildPhases = (
+				D8FB55FE2488D479009AB6BF /* Sources */,
+				D8FB55FF2488D479009AB6BF /* Frameworks */,
+				D8FB56002488D479009AB6BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8FB56082488D479009AB6BF /* PBXTargetDependency */,
+			);
+			name = EmployeeManagementUITests;
+			productName = EmployeeManagementUITests;
+			productReference = D8FB56022488D479009AB6BF /* EmployeeManagementUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -336,6 +430,15 @@
 				TargetAttributes = {
 					D8E60EC72475058D005AF5A6 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D8FB55F32488D46E009AB6BF = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = D8E60EC72475058D005AF5A6;
+					};
+					D8FB56012488D479009AB6BF = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+						TestTargetID = D8E60EC72475058D005AF5A6;
 					};
 				};
 			};
@@ -353,6 +456,8 @@
 			projectRoot = "";
 			targets = (
 				D8E60EC72475058D005AF5A6 /* EmployeeManagement */,
+				D8FB55F32488D46E009AB6BF /* EmployeeManagementTests */,
+				D8FB56012488D479009AB6BF /* EmployeeManagementUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +472,20 @@
 				D8F2C792248500F900EC23F2 /* UVCustomView.xib in Resources */,
 				D8E60ED824750593005AF5A6 /* Assets.xcassets in Resources */,
 				D8E60EE5247511DE005AF5A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FB55F22488D46E009AB6BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FB56002488D479009AB6BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +509,6 @@
 				D8861F242475322800D76626 /* ProjectListViewController.swift in Sources */,
 				D8F2C79E2485361200EC23F2 /* Project+CoreDataClass.swift in Sources */,
 				D8F2C793248500F900EC23F2 /* UVCustomView.swift in Sources */,
-				D8861F262475651F00D76626 /* AddEmployeeViewController.swift in Sources */,
 				D8F2C79F2485361200EC23F2 /* Project+CoreDataProperties.swift in Sources */,
 				D8F2C7AD24864D1200EC23F2 /* DataModel.swift in Sources */,
 				D8F2C7A5248632E900EC23F2 /* SaveEmployeeViewModel.swift in Sources */,
@@ -402,7 +520,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8FB55F02488D46E009AB6BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FB55F72488D46E009AB6BF /* EmployeeManagementTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FB55FE2488D479009AB6BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FF312B2488D831004B7877 /* EmployeeManagementUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8FB55FA2488D46E009AB6BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8E60EC72475058D005AF5A6 /* EmployeeManagement */;
+			targetProxy = D8FB55F92488D46E009AB6BF /* PBXContainerItemProxy */;
+		};
+		D8FB56082488D479009AB6BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8E60EC72475058D005AF5A6 /* EmployeeManagement */;
+			targetProxy = D8FB56072488D479009AB6BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D8E60ED924750593005AF5A6 /* LaunchScreen.storyboard */ = {
@@ -566,6 +713,87 @@
 			};
 			name = Release;
 		};
+		D8FB55FC2488D46E009AB6BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmployeeManagementTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = techm.EmployeeManagementTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmployeeManagement.app/EmployeeManagement";
+			};
+			name = Debug;
+		};
+		D8FB55FD2488D46E009AB6BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmployeeManagementTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = techm.EmployeeManagementTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmployeeManagement.app/EmployeeManagement";
+			};
+			name = Release;
+		};
+		D8FB560A2488D479009AB6BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmployeeManagementUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = techm.EmployeeManagementUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmployeeManagement;
+			};
+			name = Debug;
+		};
+		D8FB560B2488D479009AB6BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmployeeManagementUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = techm.EmployeeManagementUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmployeeManagement;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +811,24 @@
 			buildConfigurations = (
 				D8E60EE024750593005AF5A6 /* Debug */,
 				D8E60EE124750593005AF5A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8FB55FB2488D46E009AB6BF /* Build configuration list for PBXNativeTarget "EmployeeManagementTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8FB55FC2488D46E009AB6BF /* Debug */,
+				D8FB55FD2488D46E009AB6BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8FB56092488D479009AB6BF /* Build configuration list for PBXNativeTarget "EmployeeManagementUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8FB560A2488D479009AB6BF /* Debug */,
+				D8FB560B2488D479009AB6BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

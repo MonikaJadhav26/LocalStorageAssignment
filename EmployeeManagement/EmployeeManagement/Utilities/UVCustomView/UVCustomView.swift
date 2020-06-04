@@ -18,31 +18,31 @@ import UIKit
     @objc optional func doneButtonTappedForPickerView(sender : UIBarButtonItem , pickerView : UIPickerView , textField : UITextField, pickerValue: String)
     
     @objc optional func pickerValueDidChange(pickerValue : String, textField:UITextField)
-   
-
+    
+    
 }
 
 class UVBorderView: UIView {
-  
-  required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)!
-    border()
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    border()
-
-  }
-  
-  func border(){
-    self.layer.cornerRadius = 4.0
-    self.layer.masksToBounds = true
-  }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        border()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        border()
+        
+    }
+    
+    func border(){
+        self.layer.cornerRadius = 4.0
+        self.layer.masksToBounds = true
+    }
 }
 
 class UVCustomView: UIView {
-
+    
     @IBOutlet var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -53,19 +53,18 @@ class UVCustomView: UIView {
     var pickerOption = [String]()
     var pickerView = UIPickerView()
     var isOnlyTextAllowed = false
-
+    
     //Follwing variable must be set when you crate an object of this class.
     var bottomViewContraint:NSLayoutConstraint?
     var parentController:UIViewController?
     var scrollContentHeightViewContraint:NSLayoutConstraint?
     var scrollView: UIScrollView?
-
-
+    
+    
     @IBInspectable var titleText: String? {
         didSet {
-          
+            
             titleLabel.text = titleText
-           // textField.identifier = titleText!
         }
     }
     
@@ -84,7 +83,7 @@ class UVCustomView: UIView {
                 addPickerViewToTextfiled()
                 addToolBarOnTextView()
             }
-           
+            
         }
     }
     required init(coder aDecoder: NSCoder) {
@@ -96,8 +95,8 @@ class UVCustomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    //MARK: - Nib File Setup Methods
     
+    //MARK: - Nib File Setup Methods
     private func nibViewSetup() {
         backgroundColor = UIColor.white
         //load nib
@@ -113,10 +112,10 @@ class UVCustomView: UIView {
     }
     
     func addNotificationForKeyboard(){
-           
+        
         NotificationCenter.default.addObserver(self, selector: #selector(UVCustomView.willShowKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-
-               NotificationCenter.default.addObserver(self, selector: #selector(UVCustomView.willHideKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(UVCustomView.willHideKeyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -127,20 +126,20 @@ class UVCustomView: UIView {
         if accessesaryView == 2 {
             textField.resignFirstResponder()
         }else {
-        let infoDict = notification.userInfo
-        
-        let keyboardHeight = getKeyboardHeight(infoDict: infoDict!)
-
+            let infoDict = notification.userInfo
+            
+            let keyboardHeight = getKeyboardHeight(infoDict: infoDict!)
+            
             if UIDevice().name == "iPhone 8" || UIDevice().name == "iPhone 8 Plus" {
                 animateKeyboard(height: keyboardHeight - 49)
-
+                
             }else {
                 animateKeyboard(height: keyboardHeight - 79)
-
+                
             }
-        var contentInset:UIEdgeInsets = self.scrollView?.contentInset ?? .zero
-                   contentInset.bottom = keyboardHeight
-                   self.scrollView?.contentInset = contentInset
+            var contentInset:UIEdgeInsets = self.scrollView?.contentInset ?? .zero
+            contentInset.bottom = keyboardHeight
+            self.scrollView?.contentInset = contentInset
         }
     }
     
@@ -158,15 +157,11 @@ class UVCustomView: UIView {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         
-//        if parentController?.tabBarController?.tabBar.isHidden == false {
-//            keyboardHeight += 49
-//        }
-        
         return keyboardHeight
         
     }
     
-   
+    
     
     //MARK: - Function to animate
     private func animateKeyboard(height:CGFloat){
@@ -183,14 +178,6 @@ class UVCustomView: UIView {
         UIView.animate(withDuration: 0.25, animations: {
             
             self.bottomViewContraint?.constant = height
-            print("\(String(describing: self.scrollContentHeightViewContraint?.constant))")
-
-//         let viewHeight = (self.scrollContentHeightViewContraint?.constant)! - height
-//            self.scrollContentHeightViewContraint?.constant = viewHeight
-         //   print("\(viewHeight)")
-           
-           
-            
             self.parentController?.view.layoutIfNeeded()
             
         }, completion:  {_ in
@@ -207,10 +194,10 @@ class UVCustomView: UIView {
     func addToolBarOnTextView(){
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(UVCustomView.doneButtonActionMethod(sender:)))
         var tootlbar = UIToolbar()
-       tootlbar = getToolBarWith(doneButton: doneButton, controller: nil)
+        tootlbar = getToolBarWith(doneButton: doneButton, controller: nil)
         textField.inputAccessoryView = tootlbar
     }
-  
+    
     func getCalenderMaxDate() -> Date {
         let date = NSCalendar.current.date(byAdding: .year, value: -15, to: Date())
         return date!
@@ -227,9 +214,9 @@ class UVCustomView: UIView {
         }
     }
     
-   
     
-     func doneButtonTappedForPickerView(sender : UIBarButtonItem , pickerView : UIPickerView , textField : UITextField, pickerValue: String) {
+    
+    func doneButtonTappedForPickerView(sender : UIBarButtonItem , pickerView : UIPickerView , textField : UITextField, pickerValue: String) {
         customViewTextFieldDelegate?.doneButtonTappedForPickerView!(sender: sender, pickerView: pickerView, textField: textField, pickerValue: pickerValue)
         
     }
@@ -245,44 +232,17 @@ class UVCustomView: UIView {
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         return nibView
     }
-  
-    func addRightAccessesaryView()  {
-        textField.rightViewMode = UITextField.ViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        let image = UIImage(named: "ic_cal_black")
-        imageView.image = image
-        textField.rightView = imageView
-    }
-  
-    func addRightAccessesaryViewForDropDown()  {
-        textField.rightViewMode = UITextField.ViewMode.always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 13, height: 9))
-        let image = UIImage(named: "ic_close_popup")
-        imageView.image = image
-        textField.rightView = imageView
-    }
-  
-    func addPhonePad() {
-        textField.keyboardType = UIKeyboardType.phonePad
-    }
-    func addEmailPad() {
-        textField.keyboardType = UIKeyboardType.emailAddress
-    }
+    
     
     func addPickerViewToTextfiled()  {
         pickerView.delegate = self
         textField.inputView = pickerView
     }
-    func addNumberPad(){
-        textField.keyboardType = UIKeyboardType.numberPad
-    }
     
-//    deinit {
-//        NotificationCenter.removeObserver(self)
-//    }
+    
     
     //MARK: Toolbar for textfields
-
+    
     func getToolBarWith(doneButton:UIBarButtonItem, controller:UIViewController?) -> UIToolbar{
         let toolBar = UIToolbar()
         let flexibleSpace = UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: controller, action: nil)
@@ -295,7 +255,7 @@ class UVCustomView: UIView {
 }
 
 extension UVCustomView : UIPickerViewDataSource, UIPickerViewDelegate {
-   
+    
     func  numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -313,30 +273,16 @@ extension UVCustomView : UIPickerViewDataSource, UIPickerViewDelegate {
 extension UVCustomView:UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        let currentText = textField.text ?? ""
-//        let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
-//
-//        if textField.placeholder == "Select Languages" {
-//             customViewTextFieldDelegate?.langaugePopOver!(name: prospectiveText, textField: textField)
-//          return true
-//        }
-//
-//        if isOnlyTextAllowed == true {
-//            return (prospectiveText.containsOnlyCharactersIn(matchCharacters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ")) && prospectiveText.length <= textLimit
-//        }else{
-//            return prospectiveText.length <= textLimit
-//        }
-        
         return true
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if accessesaryView == 2 {
-         customViewTextFieldDelegate?.textFieldTextDidChange(textField: textField)
+            customViewTextFieldDelegate?.textFieldTextDidChange(textField: textField)
         }
         return true
     }
-  
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

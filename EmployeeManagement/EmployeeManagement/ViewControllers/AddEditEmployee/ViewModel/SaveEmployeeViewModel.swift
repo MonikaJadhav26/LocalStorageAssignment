@@ -30,34 +30,34 @@ class SaveEmployeeViewModel : NSObject {
         }
     }
     
-     //MARK: - Fetch Perticular Employee Data
+    //MARK: - Fetch Perticular Employee Data
     func fetchPerticuarEmployee(employeeID : String , completion: @escaping (Result<Bool, Error>) -> Void) {
         CoreDataManager.sharedManager.fetchPerticularEmployeeRecord(id : employeeID) { (result) in
-               DispatchQueue.main.async {
-                   switch(result) {
-                   case .success(let result):
-                       self.employeeList = result
-                       completion(.success(true))
-                   case .failure(let error):
-                       completion(.failure(error))
-                   }
-               }
-           }
-       }
+            DispatchQueue.main.async {
+                switch(result) {
+                case .success(let result):
+                    self.employeeList = result
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
     
     
     func getProjectList(completion: @escaping (Result<Bool, Error>) -> Void) {
-           CoreDataManager.sharedManager.fetchAllProjects { (result) in
-               DispatchQueue.main.async {
-                   switch(result) {
-                   case .success(let result):
-                       self.projectList = result
-                       completion(.success(true))
-                   case .failure(let error):
-                       completion(.failure(error))
-                   }
-               }
-           }
+        CoreDataManager.sharedManager.fetchAllProjects { (result) in
+            DispatchQueue.main.async {
+                switch(result) {
+                case .success(let result):
+                    self.projectList = result
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
     }
     
     
@@ -70,7 +70,7 @@ class SaveEmployeeViewModel : NSObject {
         }
         
         if pickerOptions.count == 0 {
-          pickerOptions.append("Buffer Project")
+            pickerOptions.append("Buffer Project")
         }
         return pickerOptions
     }

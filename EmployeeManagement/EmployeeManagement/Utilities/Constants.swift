@@ -16,7 +16,6 @@ struct Constants {
     static let kCellIdentifier = "EmployeeListCell"
     static let kCompentancyCellIdentifier = "competancyCell"
     static let kProjectCellIdentifier = "ProjectCell"
-
     static let employeeListTitle = "Employee List"
     static let addNewEmployee = "Add New Employee"
     static let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -24,8 +24,6 @@ class EmployeeListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         employeeProfileImage.layer.cornerRadius = employeeProfileImage.frame.size.width / 2
-      //  employeeProfileImage.layer.borderColor = UIColor.darkGray.cgColor
-      //  employeeProfileImage.layer.borderWidth = 1.0
         backgroundContainerView.layer.cornerRadius = 5
         backgroundContainerView.layer.shadowColor = UIColor.black.cgColor
         backgroundContainerView.layer.shadowOpacity = 1
@@ -35,8 +33,6 @@ class EmployeeListTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

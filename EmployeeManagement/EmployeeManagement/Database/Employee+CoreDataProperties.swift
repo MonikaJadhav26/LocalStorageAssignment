@@ -12,16 +12,16 @@ import CoreData
 
 
 extension Employee {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Employee> {
         return NSFetchRequest<Employee>(entityName: "Employee")
     }
-
+    
     @NSManaged public var band: String?
     @NSManaged public var competancy: String?
     @NSManaged public var currentProject: String?
     @NSManaged public var designation: String?
     @NSManaged public var id: String?
     @NSManaged public var name: String?
-
+    
 }

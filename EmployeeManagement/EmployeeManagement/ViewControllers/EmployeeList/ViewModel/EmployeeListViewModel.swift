@@ -54,7 +54,7 @@ class EmployeeListViewModel : NSObject {
     func getEmployeeFullName(indexPath: IndexPath) -> String {
         
         return "\( self.employeeList[indexPath.row].name ?? "") (\( self.employeeList[indexPath.row].band ?? ""))"
-
+        
     }
     
     func getEmployeeID(indexPath: IndexPath) -> String {

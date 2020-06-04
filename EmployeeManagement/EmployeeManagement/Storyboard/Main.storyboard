@@ -417,6 +417,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a new project...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmH-zL-b8d">
                                 <rect key="frame" x="8" y="98" width="338" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ProjectTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vui-rZ-OBZ"/>
                                 </constraints>
